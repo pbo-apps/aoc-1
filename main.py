@@ -19,7 +19,7 @@ def convert_to_decimal(word):
 
 def find_first_decimal(line):
     """Return the first decimal digit in the given string, or None if there is none."""
-    regex = '(\d|' + '|'.join(decimal_words) + ')'
+    regex = r'(\d|' + '|'.join(decimal_words) + ')'
     match = re.search(regex, line)
     if match:
         return convert_to_decimal(match.group(1))
@@ -30,7 +30,7 @@ def find_last_decimal(line):
     """Return the last decimal digit in the given string, or None if there is none."""
     # Reverse the line and the decimal words, then search for the first decimal digit or word.
     sdrow_lamiced = [word[::-1] for word in decimal_words]
-    regex = '(\d|' + '|'.join(sdrow_lamiced) + ')'
+    regex = r'(\d|' + '|'.join(sdrow_lamiced) + ')'
     match = re.search(regex, line[::-1])
     # If there is a match, reverse the match and convert it to a decimal digit.
     if match:
