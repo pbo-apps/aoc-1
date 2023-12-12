@@ -70,7 +70,7 @@ def apply_to_file(filename, func):
 
 def main():
     """Print the sum of the calibration values for the lines in the input file."""
-    total = apply_to_file("resources/input.txt", sum_calibration_values)
+    total = apply_to_file("resources/trebuchet-calibration.txt", sum_calibration_values)
     print(total)
 
 
